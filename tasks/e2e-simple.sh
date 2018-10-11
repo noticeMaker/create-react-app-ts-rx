@@ -89,8 +89,8 @@ yarn config set registry "$custom_registry_url"
 # This does not affect our users but makes sure we can develop it.
 # ******************************************************************************
 
-git clean -df
-./tasks/publish.sh --yes --force-publish=* --skip-git --cd-version=prerelease --exact --npm-tag=latest
+# git clean -df
+# ./tasks/publish.sh --yes --force-publish=* --skip-git --cd-version=prerelease --exact --npm-tag=latest
 
 # ******************************************************************************
 # Install react-scripts prerelease via create-react-app prerelease.
