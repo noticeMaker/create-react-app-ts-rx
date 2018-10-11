@@ -1,4 +1,4 @@
-# `react-scripts-observables` [![npm version](https://badge.fury.io/js/react-scripts-observables.svg)](https://badge.fury.io/js/react-scripts-observables) 
+# `react-scripts-observables` [![npm version](https://badge.fury.io/js/react-scripts-observables.svg)](https://badge.fury.io/js/react-scripts-observables) [![Build Status](https://travis-ci.org/noticeMaker/react-scripts-observables.svg?branch=master)](https://travis-ci.org/noticeMaker/react-scripts-observables)
 
 Create React apps (with Typescript | rxjs | redux-observables) with no build configuration.
 
