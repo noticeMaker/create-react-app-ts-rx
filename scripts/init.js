@@ -110,7 +110,14 @@ module.exports = function(
     '@types/react',
     '@types/react-dom',
     '@types/jest',
+    '@types/redux',
+    '@types/antd',
+    '@types/redux-observable',
     'typescript',
+    'antd',
+    'redux',
+    'redux-observable',
+    'react-router-dom'
   ];
 
   console.log(
