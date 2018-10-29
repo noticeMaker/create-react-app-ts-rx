@@ -101,7 +101,7 @@ const reactScriptsLinked = fs.existsSync(reactScriptsPath) &&
 console.log(reactScriptsPath, reactScriptsLinked,'reactScriptsPath')
 if (
   !reactScriptsLinked &&
-  __dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1
+  __dirname.indexOf(path.join('packages', 'react-scripts-observables', 'config')) !== -1
 ) {
   module.exports = {
     dotenv: resolveOwn('template/.env'),

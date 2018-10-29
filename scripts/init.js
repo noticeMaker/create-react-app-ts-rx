@@ -18,7 +18,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const spawn = require('react-dev-utils/crossSpawn');
-
+const types = require('./utils/devpendencies');
 module.exports = function(
   appPath,
   appName,
@@ -105,20 +105,17 @@ module.exports = function(
   }
 
   // Install dev dependencies
-  const types = [
-    '@types/node',
-    '@types/react',
-    '@types/react-dom',
-    '@types/jest',
-    '@types/redux',
-    '@types/antd',
-    '@types/redux-observable',
-    'typescript',
-    'antd',
-    'redux',
-    'redux-observable',
-    'react-router-dom'
-  ];
+  // const types = [
+  //   '@types/node',
+  //   '@types/react',
+  //   '@types/react-dom',
+  //   '@types/jest',
+  //   'typescript',
+  //   'antd',
+  //   'redux',
+  //   'redux-observable',
+  //   'react-router-dom'
+  // ];
 
   console.log(
     `Installing ${types.join(', ')} as dev dependencies ${command}...`

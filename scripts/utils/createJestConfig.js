@@ -28,6 +28,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
     setupFiles: [resolve('config/polyfills.js')],
     setupTestFrameworkScriptFile: setupTestsFile,
     testMatch: [
+      '<rootDir>/src/**/**/__tests__/**/*.(j|t)s?(x)',
       '<rootDir>/src/**/__tests__/**/*.(j|t)s?(x)',
       '<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)',
     ],
@@ -47,7 +48,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
       '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$',
     ],
     moduleNameMapper: {
-      '^react-native$': 'react-native-web',
+      "^src/(.*)": "<rootDir>/src/$1"
     },
     moduleFileExtensions: [
       'web.ts',

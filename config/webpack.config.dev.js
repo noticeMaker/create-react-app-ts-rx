@@ -20,6 +20,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const tsImportPluginFactory = require('ts-import-plugin')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -177,6 +178,14 @@ module.exports = {
               {
                 loader: require.resolve('ts-loader'),
                 options: {
+                  // antd 插件
+                  getCustomTransformers: () => ({
+                    before: [tsImportPluginFactory({
+                      libraryDirectory: 'es',
+                      libraryName: 'antd',
+                      style: 'less',
+                    })]
+                  }),
                   // disable type checker - we will use it in fork plugin
                   transpileOnly: true,
                 },
@@ -197,6 +206,9 @@ module.exports = {
                 options: {
                   importLoaders: 1,
                 },
+              },
+              {
+                loader: require.resolve('less-loader'),
               },
               {
                 loader: require.resolve('postcss-loader'),

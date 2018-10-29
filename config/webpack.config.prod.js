@@ -22,6 +22,7 @@ const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const tsImportPluginFactory = require('ts-import-plugin')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -181,6 +182,14 @@ module.exports = {
               {
                 loader: require.resolve('ts-loader'),
                 options: {
+                  // antd 插件
+                  getCustomTransformers: () => ({
+                    before: [tsImportPluginFactory({
+                      libraryDirectory: 'es',
+                      libraryName: 'antd',
+                      style: 'less',
+                    })]
+                  }),
                   // disable type checker - we will use it in fork plugin
                   transpileOnly: true,
                   configFile: paths.appTsProdConfig,
@@ -219,6 +228,9 @@ module.exports = {
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
                       },
+                    },
+                    {
+                      loader: require.resolve('less-loader'),
                     },
                     {
                       loader: require.resolve('postcss-loader'),
