@@ -31,6 +31,6 @@ if [ -n "$(git status --porcelain)" ]; then
   exit 1;
 fi
 
-npm version minor
+npm version patch
 # Go!
 npm publish --independent "$@"
