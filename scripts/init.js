@@ -63,7 +63,6 @@ module.exports = function(
   const templatePath = template
     ? path.resolve(originalDirectory, template)
     : path.join(ownPath, 'template');
-  console.log(templatePath, 'templatePath')
   if (fs.existsSync(templatePath)) {
     fs.copySync(templatePath, appPath);
   } else {
@@ -103,19 +102,6 @@ module.exports = function(
     command = 'npm';
     args = ['install', '--save', verbose && '--verbose'].filter(e => e);
   }
-
-  // Install dev dependencies
-  // const types = [
-  //   '@types/node',
-  //   '@types/react',
-  //   '@types/react-dom',
-  //   '@types/jest',
-  //   'typescript',
-  //   'antd',
-  //   'redux',
-  //   'redux-observable',
-  //   'react-router-dom'
-  // ];
 
   console.log(
     `Installing ${types.join(', ')} as dev dependencies ${command}...`
