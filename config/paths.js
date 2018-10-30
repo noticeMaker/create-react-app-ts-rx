@@ -98,7 +98,6 @@ const reactScriptsLinked = fs.existsSync(reactScriptsPath) &&
   fs.lstatSync(reactScriptsPath).isSymbolicLink();
 
 // config before publish: we're in ./packages/react-scripts/config/
-console.log(reactScriptsPath, reactScriptsLinked,'reactScriptsPath')
 if (
   !reactScriptsLinked &&
   __dirname.indexOf(path.join('packages', 'react-scripts-observables', 'config')) !== -1

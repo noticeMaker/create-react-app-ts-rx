@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { mount } from "enzyme"
 import App from 'src/containers/App'
 
-import setupStore from 'src/__tests__/setupStore'
+import setupStore from 'src/__mocks__/setupStore'
 
 describe('>>>H O M E --- REACT-REDUX (Shallow + passing the {store} directly)', () => {
 
