@@ -31,6 +31,8 @@ if [ -n "$(git status --porcelain)" ]; then
   exit 1;
 fi
 
+npm config set registry http://registry.npmjs.org
+
 npm version patch
 # Go!
 npm publish --independent "$@"
