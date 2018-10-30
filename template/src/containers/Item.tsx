@@ -11,9 +11,7 @@ class Item extends React.Component<IProps> {
     public render() {
         return (
             <div className="item">
-                {this.props.product.map((v, idx) => {
-                   return <li key={idx} className={`${idx}o`}>{v.id}</li>
-               })}
+                // item todo
             </div>
         );
     }

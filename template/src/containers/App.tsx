@@ -21,19 +21,19 @@ interface IState {
 class App extends React.Component<IProps, IState> {
 
   public componentDidMount() {
-    // this.props.getProdu22ct()
     this.props.fecthFreqList()
   }
 
   public render() {
     return (
       <div className="App">
-        <Item product={this.props.product}/>
+        
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo22" />
-          <h1 className="App-title">Welc22222ome to Re2act</h1>
+          <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
+          <Item product={this.props.product} />
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
       </div>
