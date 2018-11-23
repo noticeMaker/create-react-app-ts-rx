@@ -183,7 +183,7 @@ module.exports = {
                     before: [tsImportPluginFactory({
                       libraryDirectory: 'es',
                       libraryName: 'antd',
-                      style: 'less',
+                      style: 'css',
                     })]
                   }),
                   // disable type checker - we will use it in fork plugin
